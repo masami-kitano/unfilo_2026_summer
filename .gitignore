@@ -11,6 +11,9 @@ dist/
 # Media (アタリ動画など重量バイナリは git 管理外。本番は YouTube iframe)
 public/movie/
 
+# ローカル確認用プレビューページ
+public/movie-preview.html
+
 # OS / Editor
 .DS_Store
 Thumbs.db

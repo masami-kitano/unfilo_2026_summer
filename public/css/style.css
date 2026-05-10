@@ -427,7 +427,7 @@ main {
 }
 #unfilo2026summer .category_grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: min(4.8vw, 18px) min(3.8888888889vw, 28px);
   max-width: 650px;
   width: 86.6666666667%;
@@ -435,7 +435,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   #unfilo2026summer .category_grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: 650px;
     width: 86.6666666667%;
   }
@@ -473,6 +473,7 @@ main {
   font-size: min(2.9333333333vw, 12px);
   font-weight: 700;
   line-height: 1.4;
+  word-break: keep-all;
 }
 #unfilo2026summer #topic01-seen {
   margin-top: 32px;
@@ -744,8 +745,9 @@ main {
   height: 100%;
   aspect-ratio: 655/1164;
   background: #f7f7f7;
-  border: 1px solid #d8d8d8;
+  /* border: 1px solid #d8d8d8; */
   box-sizing: border-box;
+  margin-bottom: min(3vh, 20px);
 }
 @media (min-width: 768px) {
   #unfilo2026summer .video__sticky {
@@ -2117,17 +2119,6 @@ main {
   display: inline-block;
   font-size: 26px;
 }
-#unfilo2026summer .topicTitle_main .topicTitle_border::after {
-  position: absolute;
-  left: 50%;
-  bottom: -0.28em;
-  width: 112%;
-  aspect-ratio: 190/18;
-  background: url("../img/topic02/edit-border.svg") center/100% 100% no-repeat;
-  content: "";
-  transform: translateX(-50%);
-  pointer-events: none;
-}
 #unfilo2026summer .topicTitle-green {
   color: #00AFA1;
 }
@@ -2397,5 +2388,3 @@ main {
 #unfilo2026summer #steppi .item_name {
   font-size: min(3.2vw, 13px);
 }
-
-/*# sourceMappingURL=style.css.map */
