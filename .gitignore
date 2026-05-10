@@ -8,6 +8,9 @@ dist/
 # Vite cache
 .vite/
 
+# Media (アタリ動画など重量バイナリは git 管理外。本番は YouTube iframe)
+public/movie/
+
 # OS / Editor
 .DS_Store
 Thumbs.db
