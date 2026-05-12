@@ -2097,7 +2097,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: min(8vw, 24px);
   max-width: min(86.6666666667vw, 520px);
   margin: min(18.6666666667vw, 72px) auto min(6.4vw, 24px);
   font-family: "Noto Serif JP", serif;
