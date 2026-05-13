@@ -277,6 +277,56 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* Sticky Movie Switch */
+document.addEventListener("DOMContentLoaded", () => {
+  const switcher = document.querySelector(".video__switcher");
+  const topic02 = document.getElementById("topic02");
+  if (!switcher || !topic02) return;
+
+  const movies = {
+    rush: switcher.querySelector('[data-movie-key="rush"]'),
+    kinoubi: switcher.querySelector('[data-movie-key="kinoubi"]'),
+  };
+  if (!movies.rush || !movies.kinoubi) return;
+
+  let currentMovie = "rush";
+
+  const playMovie = (movie) => {
+    if (!movie || typeof movie.play !== "function") return;
+    const playPromise = movie.play();
+    if (playPromise) {
+      playPromise.catch(() => {});
+    }
+  };
+
+  const activateMovie = (key) => {
+    if (currentMovie === key) return;
+    currentMovie = key;
+
+    Object.entries(movies).forEach(([movieKey, movie]) => {
+      const isActive = movieKey === key;
+      movie.classList.toggle("is-active", isActive);
+
+      if (isActive) {
+        playMovie(movie);
+      } else if (typeof movie.pause === "function") {
+        movie.pause();
+      }
+    });
+  };
+
+  const updateMovieByScroll = () => {
+    const switchLine = window.innerHeight * 0.55;
+    const nextMovie = topic02.getBoundingClientRect().top <= switchLine ? "kinoubi" : "rush";
+    activateMovie(nextMovie);
+  };
+
+  playMovie(movies.rush);
+  updateMovieByScroll();
+  window.addEventListener("scroll", updateMovieByScroll, { passive: true });
+  window.addEventListener("resize", updateMovieByScroll);
+});
+
 /* GSAP ScrollTrigger - Fade Up Animation */
 document.addEventListener("DOMContentLoaded", () => {
   // ScrollTriggerプラグインを登録
