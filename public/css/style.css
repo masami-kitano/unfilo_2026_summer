@@ -749,6 +749,23 @@ main {
   box-sizing: border-box;
   margin-bottom: min(3vh, 20px);
 }
+#unfilo2026summer .video__switcher {
+  position: relative;
+  overflow: hidden;
+}
+#unfilo2026summer .video__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+#unfilo2026summer .video__media.is-active {
+  opacity: 1;
+}
 @media (min-width: 768px) {
   #unfilo2026summer .video__sticky {
     position: absolute;
@@ -795,7 +812,7 @@ main {
 }
 #unfilo2026summer .section .title {
   max-width: 550px;
-  margin: 0 auto min(2.6666666667vw, 10px);
+  margin: 0 auto min(5.2vw, 20px);
   text-align: center;
 }
 #unfilo2026summer .section .title img {
@@ -1393,6 +1410,9 @@ main {
   left: 0;
   width: 47%;
   background: transparent;
+}
+#unfilo2026summer #topic02-seen .steppiSet02.other .itemCatch::before {
+  content: none;
 }
 #unfilo2026summer #topic02 .steppiSet03 .itemImg {
   transform: translateX(7.6923%);
@@ -1998,8 +2018,17 @@ main {
   position: absolute;
   top: -23%;
   left: 0%;
-  width: 27%;
+  width: min(27%, 88px);
   z-index: 2;
+}
+@media screen and (min-width: 768px) {
+  #unfilo2026summer #topic02-seen .steppiSet05-1 .itemCatch {
+    position: absolute;
+    top: -23%;
+    left: 10%;
+    z-index: 2;
+    width: 120px;
+  }
 }
 #unfilo2026summer #topic02-seen .steppiSet05-1 .itemDecorative {
   position: absolute;
